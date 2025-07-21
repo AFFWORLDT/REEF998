@@ -39,17 +39,17 @@ export default function ReefOffPlanPage() {
     <div className="min-h-screen bg-white">
       {/* Premium Header */}
       <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-4">
-              <div className="text-2xl font-bold text-cyan-600">REEF</div>
-              <div className="text-sm text-gray-500">LUXURY DEVELOPMENTS</div>
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              <div className="text-xl sm:text-2xl font-bold text-cyan-600">REEF</div>
+              <div className="text-xs sm:text-sm text-gray-500 hidden xs:block">LUXURY DEVELOPMENTS</div>
             </div>
-            <div className="hidden md:flex items-center space-x-6 text-sm">
-              <span className="text-gray-600">Last Updated: {currentDate}</span>
-              <div className="flex items-center space-x-2 text-cyan-600">
-                <Phone className="w-4 h-4" />
-                <span>+971 55 200 2369</span>
+            <div className="flex items-center space-x-2 sm:space-x-6 text-xs sm:text-sm">
+              <span className="text-gray-600 hidden lg:block">Last Updated: {currentDate}</span>
+              <div className="flex items-center space-x-1 sm:space-x-2 text-cyan-600">
+                <Phone className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="text-xs sm:text-sm">+971 55 200 2369</span>
               </div>
             </div>
           </div>
@@ -57,7 +57,7 @@ export default function ReefOffPlanPage() {
       </header>
 
       {/* Premium Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/reef-998-building.jpg"
@@ -70,51 +70,51 @@ export default function ReefOffPlanPage() {
         </div>
 
         {/* Premium Overlay Content */}
-        <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
-          <div className="mb-6">
-            <Badge className="bg-white/20 text-white border-white/30 mb-4 px-4 py-2">
+        <div className="relative z-10 text-center text-white px-4 sm:px-6 max-w-6xl mx-auto">
+          <div className="mb-4 sm:mb-6">
+            <Badge className="bg-white/20 text-white border-white/30 mb-3 sm:mb-4 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm">
               Off-Plan Development • Q2 2028 Handover
             </Badge>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 tracking-tight">
             REEF <span className="text-cyan-400">998</span>
           </h1>
 
-          <p className="text-xl md:text-2xl mb-4 font-light opacity-90">Revolutionary Outdoor Cooling Technology</p>
+          <p className="text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 font-light opacity-90">Revolutionary Outdoor Cooling Technology</p>
 
-          <p className="text-lg mb-8 max-w-4xl mx-auto leading-relaxed opacity-80">
+          <p className="text-sm sm:text-base md:text-lg mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed opacity-80 px-2">
             Experience the world's 3rd building with patented outdoor cooling balconies. Redefining luxury living in
             Dubai Land Residence Complex with innovation, wellness, and unparalleled comfort.
           </p>
 
           {/* Premium Pricing Display */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/20">
-            <div className="grid md:grid-cols-3 gap-6 text-center">
-              <div>
-                <div className="text-3xl font-bold text-cyan-400">AED 695,850</div>
-                <div className="text-sm opacity-80">Starting Price</div>
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 border border-white/20">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-center">
+              <div className="pb-3 sm:pb-0 border-b sm:border-b-0 border-white/20">
+                <div className="text-2xl sm:text-3xl font-bold text-cyan-400">AED 695,850</div>
+                <div className="text-xs sm:text-sm opacity-80">Starting Price</div>
+              </div>
+              <div className="pb-3 sm:pb-0 border-b sm:border-b-0 border-white/20">
+                <div className="text-2xl sm:text-3xl font-bold text-cyan-400">USD 189,500</div>
+                <div className="text-xs sm:text-sm opacity-80">International Price</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-cyan-400">USD 189,500</div>
-                <div className="text-sm opacity-80">International Price</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-cyan-400">0%</div>
-                <div className="text-sm opacity-80">Interest Rate</div>
+                <div className="text-2xl sm:text-3xl font-bold text-cyan-400">0%</div>
+                <div className="text-xs sm:text-sm opacity-80">Interest Rate</div>
               </div>
             </div>
-            <div className="mt-4 text-center">
-              <Badge className="bg-green-500/20 text-green-300 border-green-500/30">
+            <div className="mt-3 sm:mt-4 text-center">
+              <Badge className="bg-green-500/20 text-green-300 border-green-500/30 text-xs sm:text-sm px-3 py-1.5">
                 No Brokerage Fees
               </Badge>
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-6 sm:mt-8 px-4">
             <Button
               size="lg"
-              className="bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg"
+              className="bg-cyan-600 hover:bg-cyan-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold shadow-lg text-sm sm:text-base w-full sm:w-auto"
               onClick={() => {
                 setFormType("eoi")
                 setIsLeadPopupOpen(true)
@@ -124,7 +124,7 @@ export default function ReefOffPlanPage() {
             </Button>
             <Button
               size="lg"
-              className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg"
+              className="bg-green-600 hover:bg-green-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold shadow-lg text-sm sm:text-base w-full sm:w-auto"
               onClick={() => {
                 setFormType("investment")
                 setIsLeadPopupOpen(true)
