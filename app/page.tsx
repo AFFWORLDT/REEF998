@@ -106,7 +106,7 @@ export default function ReefOffPlanPage() {
             </div>
             <div className="mt-4 text-center">
               <Badge className="bg-green-500/20 text-green-300 border-green-500/30">
-                Direct from Developer - No Brokerage Fees
+                No Brokerage Fees
               </Badge>
             </div>
           </div>
@@ -824,7 +824,7 @@ export default function ReefOffPlanPage() {
               >
                 Primevista Real Estate
               </a>
-              . All Rights Reserved | Expected completion Q2 2028 | Direct from developer - No brokerage fees
+              . All Rights Reserved | Expected completion Q2 2028 | No brokerage fees
             </p>
             <p className="text-xs opacity-50 leading-relaxed">
               Primevista Real Estate is an authorized sales partner of REEF Luxury Developments. We are officially
