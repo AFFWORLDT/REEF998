@@ -677,13 +677,7 @@ export default function ReefOffPlanPage() {
                 </CardContent>
               </Card>
 
-              <div className="bg-gradient-to-r from-cyan-600/20 to-teal-600/20 rounded-2xl p-6 border border-cyan-500/50 shadow-xl">
-                <h4 className="font-bold text-lg mb-2 text-cyan-300">Previous Success</h4>
-                <p className="text-sm text-gray-200">
-                  "REEF 999 and REEF 1000 achieved 100% sales within 6 months of launch, establishing REEF as a trusted
-                  name in Dubai's luxury development sector."
-                </p>
-              </div>
+
             </div>
           </div>
         </div>
@@ -767,32 +761,7 @@ export default function ReefOffPlanPage() {
             </CardContent>
           </Card>
 
-          {/* Contact Methods */}
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
-            <Card className="text-center border-0 shadow-lg">
-              <CardContent className="pt-6">
-                <Phone className="w-8 h-8 text-cyan-600 mx-auto mb-3" />
-                <h3 className="font-bold mb-2">Call Us</h3>
-                <p className="text-sm text-gray-600">+971 55 200 2369</p>
-              </CardContent>
-            </Card>
 
-            <Card className="text-center border-0 shadow-lg">
-              <CardContent className="pt-6">
-                <Mail className="w-8 h-8 text-cyan-600 mx-auto mb-3" />
-                <h3 className="font-bold mb-2">Email Us</h3>
-                <p className="text-sm text-gray-600">info@reef998.com</p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center border-0 shadow-lg">
-              <CardContent className="pt-6">
-                <Calendar className="w-8 h-8 text-cyan-600 mx-auto mb-3" />
-                <h3 className="font-bold mb-2">Visit Us</h3>
-                <p className="text-sm text-gray-600">Sales Center Dubai</p>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </section>
 
@@ -841,25 +810,7 @@ export default function ReefOffPlanPage() {
               </ul>
             </div>
 
-            <div>
-              <h3 className="font-bold mb-4">Developer</h3>
-              <ul className="space-y-2 text-sm opacity-80">
-                <li>REEF Luxury Developments</li>
-                <li>20+ Years Experience</li>
-                <li>CEO: Samer Ambar</li>
-                <li>Previous: REEF 999 & 1000</li>
-              </ul>
-            </div>
 
-            <div>
-              <h3 className="font-bold mb-4">Contact</h3>
-              <ul className="space-y-2 text-sm opacity-80">
-                <li>+971 55 200 2369</li>
-                <li>info@reef998.com</li>
-                <li>Sales Center Dubai</li>
-                <li>WhatsApp Support</li>
-              </ul>
-            </div>
           </div>
 
           <div className="border-t border-gray-800 pt-8 text-center">
