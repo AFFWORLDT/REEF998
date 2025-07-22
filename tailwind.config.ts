@@ -1,7 +1,5 @@
 import type { Config } from "tailwindcss";
 
-// all in fixtures is set to tailwind v3 as interims solutions
-
 const config: Config = {
     darkMode: ["class"],
     content: [
@@ -11,6 +9,10 @@ const config: Config = {
     "*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
+    fontFamily: {
+      sans: ['Times New Roman', 'serif'],
+      serif: ['Times New Roman', 'serif'],
+    },
   	extend: {
   		screens: {
   			'xs': '475px',
@@ -48,8 +50,11 @@ const config: Config = {
   			},
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
-  			ring: 'hsl(var(--ring))',
-  			chart: {
+  			'ring': 'hsl(var(--ring))',
+  			'reef-blue': {
+  				DEFAULT: '#3cc0c9',
+  			},
+  			'chart': {
   				'1': 'hsl(var(--chart-1))',
   				'2': 'hsl(var(--chart-2))',
   				'3': 'hsl(var(--chart-3))',

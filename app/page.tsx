@@ -42,14 +42,14 @@ export default function ReefOffPlanPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-2 sm:space-x-4">
-              <div className="text-xl sm:text-2xl font-bold text-cyan-600">REEF</div>
-              <div className="text-xs sm:text-sm text-gray-500 hidden xs:block">LUXURY DEVELOPMENTS</div>
+              <div className="text-2xl sm:text-3xl font-bold text-reef-blue font-serif">REEF</div>
+              <div className="text-xs sm:text-sm text-gray-600 hidden xs:block font-serif">LUXURY DEVELOPMENTS</div>
             </div>
             <div className="flex items-center space-x-2 sm:space-x-6 text-xs sm:text-sm">
-              <span className="text-gray-600 hidden lg:block">Last Updated: {currentDate}</span>
-              <div className="flex items-center space-x-1 sm:space-x-2 text-cyan-600">
+              <span className="text-gray-600 hidden lg:block font-serif">Last Updated: {currentDate}</span>
+              <div className="flex items-center space-x-1 sm:space-x-2 text-reef-blue">
                 <Phone className="w-3 h-3 sm:w-4 sm:h-4" />
-                <span className="text-xs sm:text-sm">+971 55 200 2369</span>
+                <span className="text-xs sm:text-sm font-serif">+971 55 200 2369</span>
               </div>
             </div>
           </div>
@@ -57,33 +57,40 @@ export default function ReefOffPlanPage() {
       </header>
 
       {/* Premium Hero Section */}
-      <section className="relative min-h-screen h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="relative w-full h-screen flex items-center overflow-hidden">
+        <div className="absolute inset-0 w-full h-full">
           <Image
             src="/images/reef-998-building.jpg"
             alt="REEF 998 Building Exterior"
             fill
-            className="object-cover"
+            className="object-cover w-full h-full"
             priority
+            style={{
+              objectFit: 'cover',
+              objectPosition: 'center',
+              width: '100%',
+              height: '100%'
+            }}
+            sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/10 to-transparent"></div>
         </div>
 
         {/* Premium Overlay Content */}
-        <div className="relative z-10 text-center text-white px-4 sm:px-6 max-w-6xl mx-auto">
-          <div className="mb-4 sm:mb-6">
-            <Badge className="bg-white/20 text-white border-white/30 mb-3 sm:mb-4 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm">
+        <div className="relative z-10 px-4 sm:px-6 max-w-6xl text-white w-full md:w-1/2 lg:w-[45%] pl-6 sm:pl-12 md:pl-20 lg:pl-24">
+          <div className="mb-8 sm:mb-10 text-left">
+            <Badge className="bg-reef-blue/90 hover:bg-reef-blue text-white border-reef-blue/80 mb-4 sm:mb-6 px-4 sm:px-5 py-2 text-sm sm:text-base">
               Off-Plan Development • Q2 2028 Handover
             </Badge>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 tracking-tight">
-            REEF <span className="text-cyan-400">998</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-5 sm:mb-7 tracking-tight text-white">
+            REEF <span className="text-reef-blue drop-shadow-lg">998</span>
           </h1>
 
-          <p className="text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 font-light opacity-90">Revolutionary Outdoor Cooling Technology</p>
+          <p className="text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 font-medium text-white/95 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">Revolutionary Outdoor Cooling Technology</p>
 
-          <p className="text-sm sm:text-base md:text-lg mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed opacity-80 px-2">
+          <p className="text-sm sm:text-base md:text-lg mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed text-white/90 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)] px-2">
             Experience the world's 3rd building with patented outdoor cooling balconies. Redefining luxury living in
             Dubai Land Residence Complex with innovation, wellness, and unparalleled comfort.
           </p>
@@ -92,15 +99,15 @@ export default function ReefOffPlanPage() {
           <div className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 border border-white/20">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-center">
               <div className="pb-3 sm:pb-0 border-b sm:border-b-0 border-white/20">
-                <div className="text-2xl sm:text-3xl font-bold text-cyan-400">AED 695,850</div>
+                <div className="text-2xl sm:text-3xl font-bold text-reef-blue">AED 695,850</div>
                 <div className="text-xs sm:text-sm opacity-80">Starting Price</div>
               </div>
               <div className="pb-3 sm:pb-0 border-b sm:border-b-0 border-white/20">
-                <div className="text-2xl sm:text-3xl font-bold text-cyan-400">USD 189,500</div>
+                <div className="text-2xl sm:text-3xl font-bold text-reef-blue">USD 189,500</div>
                 <div className="text-xs sm:text-sm opacity-80">International Price</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-bold text-cyan-400">0%</div>
+                <div className="text-2xl sm:text-3xl font-bold text-reef-blue">0%</div>
                 <div className="text-xs sm:text-sm opacity-80">Interest Rate</div>
               </div>
             </div>
@@ -114,7 +121,7 @@ export default function ReefOffPlanPage() {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-6 sm:mt-8 px-4">
             <Button
               size="lg"
-              className="bg-cyan-600 hover:bg-cyan-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold shadow-lg text-sm sm:text-base w-full sm:w-auto"
+              className="bg-reef-blue hover:bg-reef-blue/90 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold shadow-lg text-sm sm:text-base w-full sm:w-auto transition-colors"
               onClick={() => {
                 setFormType("eoi")
                 setIsLeadPopupOpen(true)
@@ -198,7 +205,7 @@ export default function ReefOffPlanPage() {
                     </Button>
                     <Button
                       type="submit"
-                      className="flex-1 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg"
+                      className="flex-1 bg-reef-blue hover:bg-reef-blue/90 text-white rounded-lg transition-colors"
                       onClick={() => {
                         // Handle form submission here
                         setIsLeadPopupOpen(false)
@@ -223,28 +230,28 @@ export default function ReefOffPlanPage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div className="flex items-center justify-center space-x-2">
-              <Building className="w-5 h-5 text-cyan-400" />
+              <Building className="w-5 h-5 text-reef-blue" />
               <div>
                 <div className="font-bold">20+ Years</div>
                 <div className="text-xs opacity-80">Experience</div>
               </div>
             </div>
             <div className="flex items-center justify-center space-x-2">
-              <Award className="w-5 h-5 text-cyan-400" />
+              <Award className="w-5 h-5 text-reef-blue" />
               <div>
                 <div className="font-bold">3 Projects</div>
                 <div className="text-xs opacity-80">Successfully Delivered</div>
               </div>
             </div>
             <div className="flex items-center justify-center space-x-2">
-              <Users className="w-5 h-5 text-cyan-400" />
+              <Users className="w-5 h-5 text-reef-blue" />
               <div>
                 <div className="font-bold">1000+</div>
                 <div className="text-xs opacity-80">Happy Residents</div>
               </div>
             </div>
             <div className="flex items-center justify-center space-x-2">
-              <TrendingUp className="w-5 h-5 text-cyan-400" />
+              <TrendingUp className="w-5 h-5 text-reef-blue" />
               <div>
                 <div className="font-bold">15%</div>
                 <div className="text-xs opacity-80">Average ROI</div>
@@ -258,7 +265,7 @@ export default function ReefOffPlanPage() {
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="bg-cyan-100 text-cyan-800 mb-4 px-4 py-2">Project Highlights</Badge>
+            <Badge className="bg-reef-blue/10 text-reef-blue/90 mb-4 px-4 py-2 border border-reef-blue/20">Project Highlights</Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Why REEF 998 Stands Apart</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Pioneering innovation meets luxury living in Dubai's most promising residential development
@@ -268,7 +275,7 @@ export default function ReefOffPlanPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="group hover:shadow-2xl transition-all duration-300 border-0 shadow-lg">
               <CardContent className="pt-8 pb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 bg-gradient-to-br from-reef-blue to-reef-blue/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <Award className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-center">World's 3rd Cooling Technology</h3>
@@ -281,7 +288,7 @@ export default function ReefOffPlanPage() {
 
             <Card className="group hover:shadow-2xl transition-all duration-300 border-0 shadow-lg">
               <CardContent className="pt-8 pb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 bg-gradient-to-br from-reef-blue to-reef-blue/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <MapPin className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-center">Strategic DLRC Location</h3>
@@ -294,7 +301,7 @@ export default function ReefOffPlanPage() {
 
             <Card className="group hover:shadow-2xl transition-all duration-300 border-0 shadow-lg">
               <CardContent className="pt-8 pb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 bg-gradient-to-br from-reef-blue to-reef-blue/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <DollarSign className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-center">0% Interest Financing</h3>
@@ -306,7 +313,7 @@ export default function ReefOffPlanPage() {
 
             <Card className="group hover:shadow-2xl transition-all duration-300 border-0 shadow-lg">
               <CardContent className="pt-8 pb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 bg-gradient-to-br from-reef-blue to-reef-blue/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <CheckCircle className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-center">25+ Premium Amenities</h3>
@@ -319,7 +326,7 @@ export default function ReefOffPlanPage() {
 
             <Card className="group hover:shadow-2xl transition-all duration-300 border-0 shadow-lg">
               <CardContent className="pt-8 pb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 bg-gradient-to-br from-reef-blue to-reef-blue/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <Shield className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-center">Proven Developer Track Record</h3>
@@ -332,7 +339,7 @@ export default function ReefOffPlanPage() {
 
             <Card className="group hover:shadow-2xl transition-all duration-300 border-0 shadow-lg">
               <CardContent className="pt-8 pb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 bg-gradient-to-br from-reef-blue to-reef-blue/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <TrendingUp className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-center">High Investment Potential</h3>
@@ -347,7 +354,7 @@ export default function ReefOffPlanPage() {
       </section>
 
       {/* Investment Opportunity */}
-      <section className="py-20 bg-gradient-to-r from-cyan-600 to-teal-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-reef-blue to-reef-blue/80 text-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -361,18 +368,18 @@ export default function ReefOffPlanPage() {
 
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-cyan-200">15%+</div>
+                  <div className="text-3xl font-bold text-white/90">15%+</div>
                   <div className="text-sm opacity-80">Expected Annual ROI</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-cyan-200">30%</div>
+                  <div className="text-3xl font-bold text-white/90">30%</div>
                   <div className="text-sm opacity-80">Resale Threshold</div>
                 </div>
               </div>
 
               <Button
                 size="lg"
-                className="bg-white text-cyan-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-xl"
+                className="bg-white text-reef-blue hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-xl transition-colors"
                 onClick={() => {
                   setFormType("investment")
                   setIsLeadPopupOpen(true)
@@ -388,15 +395,15 @@ export default function ReefOffPlanPage() {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center p-4 bg-white/10 rounded-xl">
                     <span>Down Payment</span>
-                    <span className="font-bold text-cyan-200">20%</span>
+                    <span className="font-bold text-white/90">20%</span>
                   </div>
                   <div className="flex justify-between items-center p-4 bg-white/10 rounded-xl">
                     <span>During Construction</span>
-                    <span className="font-bold text-cyan-200">50%</span>
+                    <span className="font-bold text-white/90">50%</span>
                   </div>
                   <div className="flex justify-between items-center p-4 bg-white/10 rounded-xl">
                     <span>On Handover</span>
-                    <span className="font-bold text-cyan-200">30%</span>
+                    <span className="font-bold text-white/90">30%</span>
                   </div>
                   <div className="flex justify-between items-center p-4 bg-orange-500/20 rounded-xl border border-orange-400/30">
                     <span>DLD Registration</span>
@@ -418,7 +425,7 @@ export default function ReefOffPlanPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="bg-cyan-100 text-cyan-800 mb-4 px-4 py-2">Strategic Location</Badge>
+            <Badge className="bg-reef-blue/10 text-reef-blue/90 mb-4 px-4 py-2 border border-reef-blue/20">Strategic Location</Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Dubai Land Residence Complex</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Positioned in Dubai's fastest-growing residential hub with unmatched connectivity and future growth
@@ -435,11 +442,11 @@ export default function ReefOffPlanPage() {
               <Card className="border-0 shadow-lg">
                 <CardContent className="pt-6">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-cyan-600" />
+                    <div className="w-12 h-12 bg-reef-blue/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-6 h-6 text-reef-blue" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-cyan-600 mb-2">Future Metro Connectivity</h3>
+                      <h3 className="text-xl font-bold text-reef-blue mb-2">Future Metro Connectivity</h3>
                       <p className="text-gray-600">
                         Upcoming metro station will provide seamless access to key Dubai districts, significantly
                         boosting property values and rental demand.
@@ -452,11 +459,11 @@ export default function ReefOffPlanPage() {
               <Card className="border-0 shadow-lg">
                 <CardContent className="pt-6">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Building className="w-6 h-6 text-cyan-600" />
+                    <div className="w-12 h-12 bg-reef-blue/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Building className="w-6 h-6 text-reef-blue" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-cyan-600 mb-2">Academic City Proximity</h3>
+                      <h3 className="text-xl font-bold text-reef-blue mb-2">Academic City Proximity</h3>
                       <p className="text-gray-600">
                         Located near 27+ universities, ensuring consistent rental demand from students, faculty, and
                         academic professionals.
@@ -469,11 +476,11 @@ export default function ReefOffPlanPage() {
               <Card className="border-0 shadow-lg">
                 <CardContent className="pt-6">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <TrendingUp className="w-6 h-6 text-cyan-600" />
+                    <div className="w-12 h-12 bg-reef-blue/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <TrendingUp className="w-6 h-6 text-reef-blue" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-cyan-600 mb-2">Silicon Oasis Growth</h3>
+                      <h3 className="text-xl font-bold text-reef-blue mb-2">Silicon Oasis Growth</h3>
                       <p className="text-gray-600">
                         Dubai Silicon Oasis is emerging as the city's third center by 2040, driving substantial regional
                         growth and development.
@@ -490,28 +497,28 @@ export default function ReefOffPlanPage() {
             <h3 className="text-2xl font-bold text-center mb-8">Connectivity & Access Times</h3>
             <div className="grid md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="w-16 h-16 bg-cyan-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                <div className="w-16 h-16 bg-reef-blue text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                   10
                 </div>
                 <div className="font-semibold">Global Village</div>
                 <div className="text-sm text-gray-600">Minutes</div>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-cyan-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                <div className="w-16 h-16 bg-reef-blue text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                   20
                 </div>
                 <div className="font-semibold">Burj Khalifa</div>
                 <div className="text-sm text-gray-600">Minutes</div>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-cyan-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                <div className="w-16 h-16 bg-reef-blue text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                   25
                 </div>
                 <div className="font-semibold">Dubai Airport</div>
                 <div className="text-sm text-gray-600">Minutes</div>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-cyan-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                <div className="w-16 h-16 bg-reef-blue text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                   30
                 </div>
                 <div className="font-semibold">Dubai Marina</div>
@@ -526,7 +533,7 @@ export default function ReefOffPlanPage() {
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="bg-cyan-100 text-cyan-800 mb-4 px-4 py-2">Luxury Amenities</Badge>
+            <Badge className="bg-reef-blue/10 text-reef-blue/90 mb-4 px-4 py-2 border border-reef-blue/20">Luxury Amenities</Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Resort-Style Living Experience</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Over 25 world-class amenities designed to enhance your lifestyle and well-being
@@ -555,7 +562,7 @@ export default function ReefOffPlanPage() {
                   "Floating Lounge",
                 ].map((amenity, index) => (
                   <div key={index} className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-reef-blue rounded-full"></div>
                     <span className="text-sm font-medium">{amenity}</span>
                   </div>
                 ))}
@@ -576,7 +583,7 @@ export default function ReefOffPlanPage() {
                   "Skate Park",
                 ].map((amenity, index) => (
                   <div key={index} className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-reef-blue rounded-full"></div>
                     <span className="text-sm font-medium">{amenity}</span>
                   </div>
                 ))}
@@ -590,7 +597,7 @@ export default function ReefOffPlanPage() {
       <section className="py-20 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="bg-cyan-500/20 text-cyan-300 border-cyan-500/30 mb-4 px-4 py-2">Developer Profile</Badge>
+            <Badge className="bg-reef-blue/20 text-reef-blue/90 border-reef-blue/30 mb-4 px-4 py-2">Developer Profile</Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">REEF Luxury Developments</h2>
             <p className="text-xl opacity-80 max-w-3xl mx-auto">
               Pioneering innovation in Dubai's real estate landscape with a proven track record of excellence
@@ -601,11 +608,11 @@ export default function ReefOffPlanPage() {
             <div>
               <div className="space-y-6 mb-8">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Award className="w-6 h-6 text-cyan-400" />
+                  <div className="w-12 h-12 bg-reef-blue/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Award className="w-6 h-6 text-reef-blue" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-cyan-400 mb-2">Proven Excellence</h3>
+                    <h3 className="text-xl font-bold text-reef-blue mb-2">Proven Excellence</h3>
                     <p className="opacity-80">
                       REEF 999 and REEF 1000 both achieved complete sell-out status, demonstrating strong market
                       confidence and exceptional delivery standards.
@@ -614,11 +621,11 @@ export default function ReefOffPlanPage() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Users className="w-6 h-6 text-cyan-400" />
+                  <div className="w-12 h-12 bg-reef-blue/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Users className="w-6 h-6 text-reef-blue" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-cyan-400 mb-2">Visionary Leadership</h3>
+                    <h3 className="text-xl font-bold text-reef-blue mb-2">Visionary Leadership</h3>
                     <p className="opacity-80">
                       Led by CEO Samer Ambar with 20+ years in finance and real estate. Graduate of University of Dubai
                       and London Business School.
@@ -627,11 +634,11 @@ export default function ReefOffPlanPage() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <TrendingUp className="w-6 h-6 text-cyan-400" />
+                  <div className="w-12 h-12 bg-reef-blue/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <TrendingUp className="w-6 h-6 text-reef-blue" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-cyan-400 mb-2">Innovation Focus</h3>
+                    <h3 className="text-xl font-bold text-reef-blue mb-2">Innovation Focus</h3>
                     <p className="opacity-80">
                       Committed to integrating cutting-edge technology and sustainable design principles in every
                       development project.
@@ -786,7 +793,7 @@ export default function ReefOffPlanPage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="text-2xl font-bold text-cyan-400 mb-4">REEF 998</div>
+              <div className="text-2xl font-bold text-reef-blue mb-4">REEF 998</div>
               <p className="text-sm opacity-80 mb-4">
                 Revolutionary luxury living with patented outdoor cooling technology in Dubai Land Residence Complex.
               </p>
