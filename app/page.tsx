@@ -37,27 +37,28 @@ export default function ReefOffPlanPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Premium Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+      {/* Premium Header - Sticky for Mobile */}
+      <header className="bg-white shadow-md border-b sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 py-2.5 sm:py-3">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-2 sm:space-x-4">
               <div className="text-2xl sm:text-3xl font-bold text-reef-blue font-serif">REEF</div>
-              <div className="text-xs sm:text-sm text-gray-600 hidden xs:block font-serif">LUXURY DEVELOPMENTS</div>
+              <div className="hidden sm:block text-sm text-gray-600 font-serif">LUXURY DEVELOPMENTS</div>
             </div>
-            <div className="flex items-center space-x-2 sm:space-x-6 text-xs sm:text-sm">
-              <span className="text-gray-600 hidden lg:block font-serif">Last Updated: {currentDate}</span>
-              <div className="flex items-center space-x-1 sm:space-x-2 text-reef-blue">
-                <Phone className="w-3 h-3 sm:w-4 sm:h-4" />
-                <span className="text-xs sm:text-sm font-serif">+971 55 200 2369</span>
-              </div>
-            </div>
+            <a 
+              href="tel:+971552002369" 
+              className="flex items-center justify-center space-x-1.5 sm:space-x-2 text-reef-blue bg-reef-blue/5 hover:bg-reef-blue/10 px-3.5 py-2 rounded-full transition-colors duration-200"
+              aria-label="Call +971 55 200 2369"
+            >
+              <Phone className="w-4 h-4 sm:w-4 sm:h-4 flex-shrink-0" />
+              <span className="text-sm font-medium whitespace-nowrap">+971 55 200 2369</span>
+            </a>
           </div>
         </div>
       </header>
 
       {/* Premium Hero Section */}
-      <section className="relative w-full h-screen flex items-center overflow-hidden">
+      <section className="relative w-full min-h-[85vh] sm:min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
           <Image
             src="/images/reef-998-building.jpg"
@@ -73,73 +74,91 @@ export default function ReefOffPlanPage() {
             }}
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/10 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
         </div>
 
         {/* Premium Overlay Content */}
-        <div className="relative z-10 px-4 sm:px-6 max-w-6xl text-white w-full md:w-1/2 lg:w-[45%] pl-6 sm:pl-12 md:pl-20 lg:pl-24">
-          <div className="mb-8 sm:mb-10 text-left">
-            <Badge className="bg-reef-blue/90 hover:bg-reef-blue text-white border-reef-blue/80 mb-4 sm:mb-6 px-4 sm:px-5 py-2 text-sm sm:text-base">
+        <div className="relative z-10 px-5 sm:px-6 max-w-6xl text-white w-full md:w-1/2 lg:w-[45%] pl-4 sm:pl-10 md:pl-16 lg:pl-24 py-16 sm:py-0">
+          <div className="mb-5 sm:mb-7 text-left">
+            <Badge className="bg-reef-blue/90 hover:bg-reef-blue text-white border-reef-blue/80 mb-3 px-3.5 py-1.5 text-xs sm:text-sm font-medium transition-colors">
               Off-Plan Development • Q2 2028 Handover
             </Badge>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-5 sm:mb-7 tracking-tight text-white">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 sm:mb-8 tracking-tight text-white leading-tight">
             REEF <span className="text-reef-blue drop-shadow-lg">998</span>
           </h1>
 
-          <p className="text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 font-medium text-white/95 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">Revolutionary Outdoor Cooling Technology</p>
+          {/* Payment Plan Section */}
+          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-5 sm:p-6 mb-6 sm:mb-8 border border-white/10 shadow-lg">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Left Column */}
+              <div>
+                <h3 className="text-teal-300 font-medium text-sm mb-2 tracking-wider">BENEFIT FROM 0% INTEREST</h3>
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">3-Year Payment Plan</h2>
+                <p className="text-sm text-gray-200 mb-6 leading-relaxed">
+                  REEF 998 presents an exceptional investment opportunity with strong rental return potential. 
+                  Investors benefit from capital appreciation — even during construction — once 30% is paid.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 mt-6">
+                  <Button 
+                    className="bg-teal-500 hover:bg-teal-600 text-white font-medium h-12 px-6 text-base transition-all duration-200 transform hover:scale-[1.02]"
+                    onClick={() => {
+                      setFormType("brochure");
+                      setIsLeadPopupOpen(true);
+                    }}
+                  >
+                    Request Price List
+                  </Button>
+                  <Button 
+                    variant="outline"
+                    className="bg-transparent hover:bg-white/10 text-white border-white/30 h-12 px-6 text-base transition-all duration-200 hover:border-white/50"
+                    onClick={() => {
+                      setFormType("investment");
+                      setIsLeadPopupOpen(true);
+                    }}
+                  >
+                    Calculate ROI
+                  </Button>
+                </div>
+              </div>
+              
+              {/* Right Column */}
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                <div className="bg-teal-500/10 p-4 rounded-xl border border-teal-500/20 hover:border-teal-500/40 transition-colors">
+                  <div className="text-2xl font-bold text-teal-300 mb-2">20%</div>
+                  <p className="text-xs text-gray-300 leading-tight">Secure your unit with an initial down payment</p>
+                </div>
+                <div className="bg-white/5 p-4 rounded-xl border border-white/10 hover:border-white/20 transition-colors">
+                  <div className="text-2xl font-bold text-white mb-2">50%</div>
+                  <p className="text-xs text-gray-300 leading-tight">During construction (flexible installments)</p>
+                </div>
+                <div className="bg-white/5 p-4 rounded-xl border border-white/10 hover:border-white/20 transition-colors">
+                  <div className="text-2xl font-bold text-white mb-2">30%</div>
+                  <p className="text-xs text-gray-300 leading-tight">On handover (or 2.5-year post-handover plan)</p>
+                </div>
 
-          <p className="text-sm sm:text-base md:text-lg mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed text-white/90 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)] px-2">
-            Experience the world's 3rd building with patented outdoor cooling balconies. Redefining luxury living in
-            Dubai Land Residence Complex with innovation, wellness, and unparalleled comfort.
-          </p>
+              </div>
+            </div>
+          </div>
 
           {/* Premium Pricing Display */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 border border-white/20">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-center">
-              <div className="pb-3 sm:pb-0 border-b sm:border-b-0 border-white/20">
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 sm:p-6 mb-6 sm:mb-8 border border-white/20 shadow-lg">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6 text-center">
+              <div className="pb-0 border-b-0 border-white/20">
                 <div className="text-2xl sm:text-3xl font-bold text-reef-blue">AED 695,850</div>
-                <div className="text-xs sm:text-sm opacity-80">Starting Price</div>
+                <div className="text-xs sm:text-sm opacity-80 mt-1">Starting Price</div>
               </div>
-              <div className="pb-3 sm:pb-0 border-b sm:border-b-0 border-white/20">
+              <div className="pb-0">
                 <div className="text-2xl sm:text-3xl font-bold text-reef-blue">USD 189,500</div>
-                <div className="text-xs sm:text-sm opacity-80">International Price</div>
-              </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-bold text-reef-blue">0%</div>
-                <div className="text-xs sm:text-sm opacity-80">Interest Rate</div>
+                <div className="text-xs sm:text-sm opacity-80 mt-1">International Price</div>
               </div>
             </div>
-            <div className="mt-3 sm:mt-4 text-center">
-              <Badge className="bg-green-500/20 text-green-300 border-green-500/30 text-xs sm:text-sm px-3 py-1.5">
-                No Brokerage Fees
-              </Badge>
+            <div className="mt-4 pt-4 border-t border-white/10 text-center">
+              <p className="text-xs text-gray-300">Prices starting from. Contact us for detailed pricing and availability.</p>
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-6 sm:mt-8 px-4">
-            <Button
-              size="lg"
-              className="bg-reef-blue hover:bg-reef-blue/90 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold shadow-lg text-sm sm:text-base w-full sm:w-auto transition-colors"
-              onClick={() => {
-                setFormType("eoi")
-                setIsLeadPopupOpen(true)
-              }}
-            >
-              Secure Unit Now
-            </Button>
-            <Button
-              size="lg"
-              className="bg-green-600 hover:bg-green-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold shadow-lg text-sm sm:text-base w-full sm:w-auto"
-              onClick={() => {
-                setFormType("investment")
-                setIsLeadPopupOpen(true)
-              }}
-            >
-              Calculate ROI
-            </Button>
-          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Dialog open={isLeadPopupOpen} onOpenChange={setIsLeadPopupOpen}>
@@ -225,195 +244,81 @@ export default function ReefOffPlanPage() {
         </div>
       </section>
 
-      {/* Developer Credentials Bar */}
-      <section className="bg-gray-900 text-white py-6">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div className="flex items-center justify-center space-x-2">
-              <Building className="w-5 h-5 text-reef-blue" />
-              <div>
-                <div className="font-bold">20+ Years</div>
-                <div className="text-xs opacity-80">Experience</div>
-              </div>
-            </div>
-            <div className="flex items-center justify-center space-x-2">
-              <Award className="w-5 h-5 text-reef-blue" />
-              <div>
-                <div className="font-bold">3 Projects</div>
-                <div className="text-xs opacity-80">Successfully Delivered</div>
-              </div>
-            </div>
-            <div className="flex items-center justify-center space-x-2">
-              <Users className="w-5 h-5 text-reef-blue" />
-              <div>
-                <div className="font-bold">1000+</div>
-                <div className="text-xs opacity-80">Happy Residents</div>
-              </div>
-            </div>
-            <div className="flex items-center justify-center space-x-2">
-              <TrendingUp className="w-5 h-5 text-reef-blue" />
-              <div>
-                <div className="font-bold">15%</div>
-                <div className="text-xs opacity-80">Average ROI</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Project Highlights */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <Badge className="bg-reef-blue/10 text-reef-blue/90 mb-4 px-4 py-2 border border-reef-blue/20">Project Highlights</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Why REEF 998 Stands Apart</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Pioneering innovation meets luxury living in Dubai's most promising residential development
-            </p>
-          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="group hover:shadow-2xl transition-all duration-300 border-0 shadow-lg">
-              <CardContent className="pt-8 pb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-reef-blue to-reef-blue/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <Award className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-center">World's 3rd Cooling Technology</h3>
-                <p className="text-gray-600 text-center leading-relaxed">
-                  Revolutionary patented outdoor cooling balconies - a global innovation providing year-round comfort in
-                  Dubai's climate.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-2xl transition-all duration-300 border-0 shadow-lg">
-              <CardContent className="pt-8 pb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-reef-blue to-reef-blue/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <MapPin className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-center">Strategic DLRC Location</h3>
-                <p className="text-gray-600 text-center leading-relaxed">
-                  Prime location with upcoming metro connectivity, academic proximity, and rapid infrastructure
-                  development.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-2xl transition-all duration-300 border-0 shadow-lg">
-              <CardContent className="pt-8 pb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-reef-blue to-reef-blue/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <DollarSign className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-center">0% Interest Financing</h3>
-                <p className="text-gray-600 text-center leading-relaxed">
-                  Flexible 3-year payment plan with zero interest, making luxury living accessible and affordable.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-2xl transition-all duration-300 border-0 shadow-lg">
-              <CardContent className="pt-8 pb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-reef-blue to-reef-blue/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <CheckCircle className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-center">25+ Premium Amenities</h3>
-                <p className="text-gray-600 text-center leading-relaxed">
-                  Resort-style facilities including infinity pools, sports courts, wellness centers, and entertainment
-                  zones.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-2xl transition-all duration-300 border-0 shadow-lg">
-              <CardContent className="pt-8 pb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-reef-blue to-reef-blue/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <Shield className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-center">Proven Developer Track Record</h3>
-                <p className="text-gray-600 text-center leading-relaxed">
-                  REEF 999 and REEF 1000 sold out successfully, demonstrating strong market confidence and delivery
-                  capability.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-2xl transition-all duration-300 border-0 shadow-lg">
-              <CardContent className="pt-8 pb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-reef-blue to-reef-blue/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <TrendingUp className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-center">High Investment Potential</h3>
-                <p className="text-gray-600 text-center leading-relaxed">
-                  Strong rental yields, capital appreciation potential, and resale flexibility even during construction
-                  phase.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
 
       {/* Investment Opportunity */}
-      <section className="py-20 bg-gradient-to-r from-reef-blue to-reef-blue/80 text-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <Badge className="bg-white/20 text-white border-white/30 mb-6 px-4 py-2">Investment Opportunity</Badge>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Exceptional Returns Await Smart Investors</h2>
-              <p className="text-xl mb-8 opacity-90 leading-relaxed">
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-r from-reef-blue to-reef-blue/80 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div className="text-center lg:text-left">
+              <Badge className="bg-white/20 text-white border-white/30 mb-4 sm:mb-6 px-4 py-1.5 text-sm font-medium hover:bg-white/30 transition-colors">
+                Investment Opportunity
+              </Badge>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
+                Exceptional Returns Await Smart Investors
+              </h2>
+              <p className="text-base sm:text-lg opacity-90 leading-relaxed mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0">
                 REEF 998 presents a unique investment opportunity with strong rental return potential and capital
-                appreciation. Investors can resell and benefit from appreciation even during construction once 30% is
-                paid.
+                appreciation. Investors can resell and benefit from appreciation even during construction once 30% is paid.
               </p>
 
-              <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-white/90">15%+</div>
-                  <div className="text-sm opacity-80">Expected Annual ROI</div>
+              <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-8 max-w-md mx-auto lg:mx-0">
+                <div className="bg-white/10 p-4 rounded-xl text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">15%+</div>
+                  <div className="text-xs sm:text-sm opacity-90">Expected Annual ROI</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-white/90">30%</div>
-                  <div className="text-sm opacity-80">Resale Threshold</div>
+                <div className="bg-white/10 p-4 rounded-xl text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">30%</div>
+                  <div className="text-xs sm:text-sm opacity-90">Resale Threshold</div>
                 </div>
               </div>
 
-              <Button
-                size="lg"
-                className="bg-white text-reef-blue hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-xl transition-colors"
-                onClick={() => {
-                  setFormType("investment")
-                  setIsLeadPopupOpen(true)
-                }}
-              >
-                Get Free Investment Analysis
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Button
+                  size="lg"
+                  className="bg-white text-reef-blue hover:bg-gray-100 px-6 py-5 sm:px-8 sm:py-6 text-base sm:text-lg font-semibold rounded-xl transition-all hover:shadow-lg transform hover:-translate-y-0.5"
+                  onClick={() => {
+                    setFormType("investment")
+                    setIsLeadPopupOpen(true)
+                  }}
+                >
+                  Get Free Investment Analysis
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-white/30 bg-transparent hover:bg-white/10 text-white px-6 py-5 sm:px-8 sm:py-6 text-base sm:text-lg font-semibold rounded-xl transition-all hover:border-white/50"
+                  onClick={() => {
+                    setFormType("brochure")
+                    setIsLeadPopupOpen(true)
+                  }}
+                >
+                  Download Brochure
+                </Button>
+              </div>
             </div>
 
             <div className="relative">
-              <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
-                <h3 className="text-2xl font-bold mb-6 text-center">Payment Structure</h3>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center p-4 bg-white/10 rounded-xl">
-                    <span>Down Payment</span>
-                    <span className="font-bold text-white/90">20%</span>
+              <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-white/20 shadow-xl">
+                <h3 className="text-xl sm:text-2xl font-bold mb-6 text-center">Payment Structure</h3>
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="flex justify-between items-center p-3 sm:p-4 bg-white/10 hover:bg-white/15 rounded-xl transition-colors">
+                    <span className="text-sm sm:text-base">Down Payment</span>
+                    <span className="font-bold text-white/90 text-lg sm:text-xl">20%</span>
                   </div>
-                  <div className="flex justify-between items-center p-4 bg-white/10 rounded-xl">
-                    <span>During Construction</span>
-                    <span className="font-bold text-white/90">50%</span>
+                  <div className="flex justify-between items-center p-3 sm:p-4 bg-white/10 hover:bg-white/15 rounded-xl transition-colors">
+                    <span className="text-sm sm:text-base">During Construction</span>
+                    <span className="font-bold text-white/90 text-lg sm:text-xl">50%</span>
                   </div>
-                  <div className="flex justify-between items-center p-4 bg-white/10 rounded-xl">
-                    <span>On Handover</span>
-                    <span className="font-bold text-white/90">30%</span>
+                  <div className="flex justify-between items-center p-3 sm:p-4 bg-white/10 hover:bg-white/15 rounded-xl transition-colors">
+                    <span className="text-sm sm:text-base">On Handover</span>
+                    <span className="font-bold text-white/90 text-lg sm:text-xl">30%</span>
                   </div>
-                  <div className="flex justify-between items-center p-4 bg-orange-500/20 rounded-xl border border-orange-400/30">
-                    <span>DLD Registration</span>
-                    <span className="font-bold text-orange-200">4%</span>
+                  <div className="flex justify-between items-center p-3 sm:p-4 bg-orange-500/20 hover:bg-orange-500/30 rounded-xl border border-orange-400/30 transition-colors">
+                    <span className="text-sm sm:text-base">DLD Registration</span>
+                    <span className="font-bold text-orange-200 text-lg sm:text-xl">4%</span>
                   </div>
-                </div>
-                <div className="text-center mt-6">
-                  <Badge className="bg-green-500/20 text-green-300 border-green-500/30 px-4 py-2">
-                    0% Interest • 3-Year Plan
-                  </Badge>
                 </div>
               </div>
             </div>
