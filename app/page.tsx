@@ -97,11 +97,38 @@ export default function ReefOffPlanPage() {
     setIsSubmitting(true)
     
     try {
-      // Here you would typically send the data to your backend
-      console.log("Form submitted:", { ...formData, formType })
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      // Send data to CRM API
+      const payload = {
+        clientSource: "website",
+        clientSubSource: "reef",
+        clientType: "ENQUIRY",
+        email: formData.email,
+        ip_address: "",
+        leads_message: formType,
+        name: formData.fullName,
+        phone: formData.phone,
+        project: "reef998",
+        status: "ACTIVE"
+      }
+      const res = await fetch("https://korchiccrm-api.propfusion.io/properties/create_leads_for_website", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      })
+      let respJson: any = null
+      try {
+        respJson = await res.clone().json()
+      } catch (err) {
+        // Response is not JSON or failed to parse
+        respJson = null
+      }
+      if (!res.ok) {
+        console.error("CRM API error", res.status, respJson)
+        throw new Error(`API request failed: ${res.status} ${respJson?.message || res.statusText}`)
+      }
+      console.info("CRM API success", respJson);
       
       // Success feedback
       alert(`Thank you! Your ${formType} request has been submitted successfully. We'll contact you soon.`)
@@ -142,11 +169,38 @@ export default function ReefOffPlanPage() {
     setIsConsultationSubmitting(true)
     
     try {
-      // Here you would typically send the data to your backend
-      console.log("Consultation form submitted:", consultationFormData)
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      // Send data to CRM API
+      const payload = {
+        clientSource: "website",
+        clientSubSource: "reef",
+        clientType: "ENQUIRY",
+        email: consultationFormData.email,
+        ip_address: "",
+        leads_message: consultationFormData.message || "Consultation",
+        name: consultationFormData.fullName,
+        phone: consultationFormData.phone,
+        project: "reef998",
+        status: "ACTIVE"
+      }
+      const res = await fetch("https://korchiccrm-api.propfusion.io/properties/create_leads_for_website", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      })
+      let respJson: any = null
+      try {
+        respJson = await res.clone().json()
+      } catch (err) {
+        // Response is not JSON or failed to parse
+        respJson = null
+      }
+      if (!res.ok) {
+        console.error("CRM API error", res.status, respJson)
+        throw new Error(`API request failed: ${res.status} ${respJson?.message || res.statusText}`)
+      }
+      console.info("CRM API success", respJson);
       
       // Success feedback
       alert(`Thank you! Your consultation request has been submitted successfully. We'll contact you soon.`)
