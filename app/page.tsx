@@ -179,7 +179,7 @@ export default function ReefOffPlanPage() {
               <div className="hidden sm:block text-sm text-gray-600 font-serif">LUXURY DEVELOPMENTS</div>
             </div>
             <a 
-              href="https://wa.me/971552002369" 
+              href="https://wa.me/971552002369?text=Hi%2C%20I%27m%20interested%20in%20REEF%20998%20-%20the%20luxury%20residential%20development%20with%200%25%20interest%20payment%20plan.%20Could%20you%20please%20provide%20more%20information%20about%20unit%20availability%2C%20pricing%2C%20and%20payment%20options%3F" 
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center space-x-1.5 sm:space-x-2 text-green-600 bg-green-50 hover:bg-green-100 px-3.5 py-2 rounded-full transition-colors duration-200"
