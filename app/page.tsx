@@ -496,10 +496,7 @@ export default function ReefOffPlanPage() {
                     <span className="text-sm sm:text-base">On Handover</span>
                     <span className="font-bold text-white/90 text-lg sm:text-xl">30%</span>
                   </div>
-                  <div className="flex justify-between items-center p-3 sm:p-4 bg-orange-500/20 hover:bg-orange-500/30 rounded-xl border border-orange-400/30 transition-colors">
-                    <span className="text-sm sm:text-base">DLD Registration</span>
-                    <span className="font-bold text-orange-200 text-lg sm:text-xl">4%</span>
-                  </div>
+
                 </div>
               </div>
             </div>
