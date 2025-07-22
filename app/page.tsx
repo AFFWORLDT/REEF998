@@ -34,6 +34,139 @@ export default function ReefOffPlanPage() {
 
   const [isLeadPopupOpen, setIsLeadPopupOpen] = useState(false)
   const [formType, setFormType] = useState<"brochure" | "schedule" | "investment" | "eoi" | "consultation">("brochure")
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    budget: "",
+    preferredDate: "",
+    message: ""
+  })
+  const [consultationFormData, setConsultationFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    budget: "",
+    unitType: "",
+    message: ""
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isConsultationSubmitting, setIsConsultationSubmitting] = useState(false)
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }))
+  }
+
+  const handleConsultationInputChange = (field: string, value: string) => {
+    setConsultationFormData(prev => ({ ...prev, [field]: value }))
+  }
+
+  const resetForm = () => {
+    setFormData({
+      fullName: "",
+      email: "",
+      phone: "",
+      budget: "",
+      preferredDate: "",
+      message: ""
+    })
+  }
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    e.stopPropagation()
+    
+    // Prevent duplicate submissions
+    if (isSubmitting) {
+      return
+    }
+    
+    // Basic validation
+    if (!formData.fullName || !formData.email || !formData.phone) {
+      alert("Please fill in all required fields")
+      return
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(formData.email)) {
+      alert("Please enter a valid email address")
+      return
+    }
+
+    setIsSubmitting(true)
+    
+    try {
+      // Here you would typically send the data to your backend
+      console.log("Form submitted:", { ...formData, formType })
+      
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      
+      // Success feedback
+      alert(`Thank you! Your ${formType} request has been submitted successfully. We'll contact you soon.`)
+      
+      // Reset form and close modal
+      resetForm()
+      setIsLeadPopupOpen(false)
+    } catch (error) {
+      console.error("Form submission error:", error)
+      alert("There was an error submitting your request. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  const handleConsultationSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    e.stopPropagation()
+    
+    // Prevent duplicate submissions
+    if (isConsultationSubmitting) {
+      return
+    }
+    
+    // Basic validation
+    if (!consultationFormData.fullName || !consultationFormData.email || !consultationFormData.phone) {
+      alert("Please fill in all required fields")
+      return
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(consultationFormData.email)) {
+      alert("Please enter a valid email address")
+      return
+    }
+
+    setIsConsultationSubmitting(true)
+    
+    try {
+      // Here you would typically send the data to your backend
+      console.log("Consultation form submitted:", consultationFormData)
+      
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      
+      // Success feedback
+      alert(`Thank you! Your consultation request has been submitted successfully. We'll contact you soon.`)
+      
+      // Reset consultation form
+      setConsultationFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        budget: "",
+        unitType: "",
+        message: ""
+      })
+    } catch (error) {
+      console.error("Consultation form submission error:", error)
+      alert("There was an error submitting your request. Please try again.")
+    } finally {
+      setIsConsultationSubmitting(false)
+    }
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -46,11 +179,15 @@ export default function ReefOffPlanPage() {
               <div className="hidden sm:block text-sm text-gray-600 font-serif">LUXURY DEVELOPMENTS</div>
             </div>
             <a 
-              href="tel:+971552002369" 
-              className="flex items-center justify-center space-x-1.5 sm:space-x-2 text-reef-blue bg-reef-blue/5 hover:bg-reef-blue/10 px-3.5 py-2 rounded-full transition-colors duration-200"
-              aria-label="Call +971 55 200 2369"
+              href="https://wa.me/971552002369" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center space-x-1.5 sm:space-x-2 text-green-600 bg-green-50 hover:bg-green-100 px-3.5 py-2 rounded-full transition-colors duration-200"
+              aria-label="Chat on WhatsApp +971 55 200 2369"
             >
-              <Phone className="w-4 h-4 sm:w-4 sm:h-4 flex-shrink-0" />
+              <svg className="w-4 h-4 sm:w-4 sm:h-4 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+              </svg>
               <span className="text-sm font-medium whitespace-nowrap">+971 55 200 2369</span>
             </a>
           </div>
@@ -179,23 +316,42 @@ export default function ReefOffPlanPage() {
                     {formType === "consultation" && "Connect with our investment specialists"}
                   </p>
                 </DialogHeader>
-                <form className="space-y-4 mt-6">
+                <form onSubmit={handleFormSubmit} className="space-y-4 mt-6">
                   <div>
                     <label className="block text-sm font-medium mb-2">Full Name *</label>
-                    <Input placeholder="Enter your full name" required className="rounded-lg" />
+                    <Input 
+                      placeholder="Enter your full name" 
+                      required 
+                      className="rounded-lg" 
+                      value={formData.fullName}
+                      onChange={(e) => handleInputChange('fullName', e.target.value)}
+                    />
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2">Email Address *</label>
-                    <Input type="email" placeholder="Enter your email address" required className="rounded-lg" />
+                    <Input 
+                      type="email" 
+                      placeholder="Enter your email address" 
+                      required 
+                      className="rounded-lg" 
+                      value={formData.email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
+                    />
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2">Phone Number *</label>
-                    <Input placeholder="+971 55 200 2369" required className="rounded-lg" />
+                    <Input 
+                      placeholder="+971 55 200 2369" 
+                      required 
+                      className="rounded-lg" 
+                      value={formData.phone}
+                      onChange={(e) => handleInputChange('phone', e.target.value)}
+                    />
                   </div>
                   {(formType === "investment" || formType === "eoi" || formType === "consultation") && (
                     <div>
                       <label className="block text-sm font-medium mb-2">Investment Budget</label>
-                      <Select>
+                      <Select value={formData.budget} onValueChange={(value) => handleInputChange('budget', value)}>
                         <SelectTrigger className="rounded-lg">
                           <SelectValue placeholder="Select budget range" />
                         </SelectTrigger>
@@ -210,7 +366,23 @@ export default function ReefOffPlanPage() {
                   {formType === "schedule" && (
                     <div>
                       <label className="block text-sm font-medium mb-2">Preferred Date</label>
-                      <Input type="date" className="rounded-lg" />
+                      <Input 
+                        type="date" 
+                        className="rounded-lg" 
+                        value={formData.preferredDate}
+                        onChange={(e) => handleInputChange('preferredDate', e.target.value)}
+                      />
+                    </div>
+                  )}
+                  {(formType === "investment" || formType === "consultation") && (
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Message</label>
+                      <Textarea 
+                        placeholder="Tell us about your investment goals..." 
+                        className="rounded-lg min-h-[80px]" 
+                        value={formData.message}
+                        onChange={(e) => handleInputChange('message', e.target.value)}
+                      />
                     </div>
                   )}
                   <div className="flex gap-3 pt-4">
@@ -218,23 +390,32 @@ export default function ReefOffPlanPage() {
                       type="button"
                       variant="outline"
                       className="flex-1 rounded-lg bg-transparent"
-                      onClick={() => setIsLeadPopupOpen(false)}
+                      onClick={() => {
+                        resetForm()
+                        setIsLeadPopupOpen(false)
+                      }}
+                      disabled={isSubmitting}
                     >
                       Cancel
                     </Button>
                     <Button
                       type="submit"
-                      className="flex-1 bg-reef-blue hover:bg-reef-blue/90 text-white rounded-lg transition-colors"
-                      onClick={() => {
-                        // Handle form submission here
-                        setIsLeadPopupOpen(false)
+                      className="flex-1 bg-reef-blue hover:bg-reef-blue/90 text-white rounded-lg transition-colors disabled:opacity-50"
+                      disabled={isSubmitting}
+                      onClick={(e) => {
+                        // Let the form onSubmit handle the submission
+                        // This onClick is just to ensure proper form behavior
                       }}
                     >
-                      {formType === "brochure" && "Download Now"}
-                      {formType === "schedule" && "Book Viewing"}
-                      {formType === "investment" && "Get Analysis"}
-                      {formType === "eoi" && "Submit EOI"}
-                      {formType === "consultation" && "Schedule Now"}
+                      {isSubmitting ? "Submitting..." : (
+                        <>
+                          {formType === "brochure" && "Download Now"}
+                          {formType === "schedule" && "Book Viewing"}
+                          {formType === "investment" && "Get Analysis"}
+                          {formType === "eoi" && "Submit EOI"}
+                          {formType === "consultation" && "Schedule Now"}
+                        </>
+                      )}
                     </Button>
                   </div>
                 </form>
@@ -608,27 +789,46 @@ export default function ReefOffPlanPage() {
 
           <Card className="border-0 shadow-2xl">
             <CardContent className="pt-8 pb-8">
-              <form className="space-y-6">
+              <form onSubmit={handleConsultationSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-semibold mb-2">Full Name *</label>
-                    <Input placeholder="Enter your full name" className="rounded-xl h-12" />
+                    <Input 
+                      placeholder="Enter your full name" 
+                      className="rounded-xl h-12" 
+                      value={consultationFormData.fullName}
+                      onChange={(e) => handleConsultationInputChange('fullName', e.target.value)}
+                      required
+                    />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold mb-2">Phone Number *</label>
-                    <Input placeholder="+971 55 200 2369" className="rounded-xl h-12" />
+                    <Input 
+                      placeholder="+971 55 200 2369" 
+                      className="rounded-xl h-12" 
+                      value={consultationFormData.phone}
+                      onChange={(e) => handleConsultationInputChange('phone', e.target.value)}
+                      required
+                    />
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-sm font-semibold mb-2">Email Address *</label>
-                  <Input type="email" placeholder="Enter your email address" className="rounded-xl h-12" />
+                  <Input 
+                    type="email" 
+                    placeholder="Enter your email address" 
+                    className="rounded-xl h-12" 
+                    value={consultationFormData.email}
+                    onChange={(e) => handleConsultationInputChange('email', e.target.value)}
+                    required
+                  />
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-semibold mb-2">Investment Budget</label>
-                    <Select>
+                    <Select value={consultationFormData.budget} onValueChange={(value) => handleConsultationInputChange('budget', value)}>
                       <SelectTrigger className="rounded-xl h-12">
                         <SelectValue placeholder="Select budget range" />
                       </SelectTrigger>
@@ -641,7 +841,7 @@ export default function ReefOffPlanPage() {
                   </div>
                   <div>
                     <label className="block text-sm font-semibold mb-2">Preferred Unit Type</label>
-                    <Select>
+                    <Select value={consultationFormData.unitType} onValueChange={(value) => handleConsultationInputChange('unitType', value)}>
                       <SelectTrigger className="rounded-xl h-12">
                         <SelectValue placeholder="Select unit type" />
                       </SelectTrigger>
@@ -657,17 +857,21 @@ export default function ReefOffPlanPage() {
 
                 <div>
                   <label className="block text-sm font-semibold mb-2">Message</label>
-                  <Textarea placeholder="Tell us about your investment goals..." rows={4} className="rounded-xl" />
+                  <Textarea 
+                    placeholder="Tell us about your investment goals..." 
+                    rows={4} 
+                    className="rounded-xl" 
+                    value={consultationFormData.message}
+                    onChange={(e) => handleConsultationInputChange('message', e.target.value)}
+                  />
                 </div>
 
                 <Button
-                  className="w-full bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-700 hover:to-teal-700 text-white py-4 text-lg font-semibold rounded-xl"
-                  onClick={() => {
-                    setFormType("consultation")
-                    setIsLeadPopupOpen(true)
-                  }}
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-700 hover:to-teal-700 text-white py-4 text-lg font-semibold rounded-xl disabled:opacity-50"
+                  disabled={isConsultationSubmitting}
                 >
-                  Get Instant Consultation
+                  {isConsultationSubmitting ? "Submitting..." : "Get Instant Consultation"}
                 </Button>
               </form>
             </CardContent>
