@@ -281,55 +281,47 @@ export default function ReefOffPlanPage() {
           </h1>
 
           {/* Payment Plan Section */}
-          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-5 sm:p-6 mb-6 sm:mb-8 border border-white/10 shadow-lg">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Left Column */}
-              <div>
-                <h3 className="text-teal-300 font-medium text-sm mb-2 tracking-wider">BENEFIT FROM 0% INTEREST</h3>
-                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">3-Year Payment Plan</h2>
-                <p className="text-sm text-gray-200 mb-6 leading-relaxed">
-                  REEF 998 presents an exceptional investment opportunity with strong rental return potential. 
-                  Investors benefit from capital appreciation — even during construction — once 30% is paid.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 mt-6">
-                  <Button 
-                    className="bg-teal-500 hover:bg-teal-600 text-white font-medium h-12 px-6 text-base transition-all duration-200 transform hover:scale-[1.02]"
-                    onClick={() => {
-                      setFormType("brochure");
-                      setIsLeadPopupOpen(true);
-                    }}
-                  >
-                    Request Price List
-                  </Button>
-                  <Button 
-                    variant="outline"
-                    className="bg-transparent hover:bg-white/10 text-white border-white/30 h-12 px-6 text-base transition-all duration-200 hover:border-white/50"
-                    onClick={() => {
-                      setFormType("investment");
-                      setIsLeadPopupOpen(true);
-                    }}
-                  >
-                    Calculate ROI
-                  </Button>
-                </div>
+          <div className="bg-zinc-900 rounded-2xl p-8 max-w-3xl mx-auto text-white">
+            <div className="mb-6">
+              <p className="text-teal-300 font-semibold tracking-widest mb-2">BENEFIT FROM 0% INTEREST</p>
+              <h2 className="text-4xl font-extrabold mb-4">3-Year Payment Plan</h2>
+              <p className="text-lg text-zinc-200">
+                REEF 998 presents an exceptional investment opportunity with strong rental return potential. Investors benefit from capital appreciation — even during construction — once 30% is paid.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <div className="flex-1 bg-gradient-to-b from-teal-900/60 to-zinc-800 border border-teal-400 rounded-xl p-6 text-center">
+                <div className="text-3xl font-bold text-teal-300 mb-2">20%</div>
+                <div className="text-zinc-100">Secure your unit with an initial down payment</div>
               </div>
-              
-              {/* Right Column */}
-              <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                <div className="bg-teal-500/10 p-4 rounded-xl border border-teal-500/20 hover:border-teal-500/40 transition-colors">
-                  <div className="text-2xl font-bold text-teal-300 mb-2">20%</div>
-                  <p className="text-xs text-gray-300 leading-tight">Secure your unit with an initial down payment</p>
-                </div>
-                <div className="bg-white/5 p-4 rounded-xl border border-white/10 hover:border-white/20 transition-colors">
-                  <div className="text-2xl font-bold text-white mb-2">50%</div>
-                  <p className="text-xs text-gray-300 leading-tight">During construction (flexible installments)</p>
-                </div>
-                <div className="bg-white/5 p-4 rounded-xl border border-white/10 hover:border-white/20 transition-colors">
-                  <div className="text-2xl font-bold text-white mb-2">30%</div>
-                  <p className="text-xs text-gray-300 leading-tight">On handover (or 2.5-year post-handover plan)</p>
-                </div>
-
+              <div className="flex-1 bg-zinc-800 border border-zinc-700 rounded-xl p-6 text-center">
+                <div className="text-3xl font-bold text-white mb-2">50%</div>
+                <div className="text-zinc-100">During construction<br/>(flexible installments)</div>
               </div>
+              <div className="flex-1 bg-zinc-800 border border-zinc-700 rounded-xl p-6 text-center">
+                <div className="text-3xl font-bold text-white mb-2">30%</div>
+                <div className="text-zinc-100">On handover<br/>(or 2.5-year post-handover plan)</div>
+              </div>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button
+                className="flex-1 bg-teal-400 text-zinc-900 font-semibold py-3 rounded-lg hover:bg-teal-300 transition"
+                onClick={() => {
+                  setFormType("brochure");
+                  setIsLeadPopupOpen(true);
+                }}
+              >
+                Request Price List
+              </button>
+              <button
+                className="flex-1 border border-white text-white font-semibold py-3 rounded-lg hover:bg-white hover:text-zinc-900 transition"
+                onClick={() => {
+                  setFormType("investment");
+                  setIsLeadPopupOpen(true);
+                }}
+              >
+                Calculate ROI
+              </button>
             </div>
           </div>
 
@@ -933,20 +925,24 @@ export default function ReefOffPlanPage() {
       </section>
 
       {/* WhatsApp CTA */}
-      <section className="py-8 bg-green-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="flex items-center justify-center space-x-4">
-            <MessageCircle className="w-8 h-8" />
-            <span className="text-xl font-bold">Connect on WhatsApp for Instant Support</span>
-            <Button
-              className="bg-white text-green-600 hover:bg-gray-100 rounded-xl px-6 py-2 font-semibold"
-              onClick={() => window.open("https://wa.me/971552002369", "_blank")}
-            >
-              Start Chat
-            </Button>
-          </div>
+      <div className="w-full bg-zinc-900 py-6 flex justify-center items-center">
+        <div className="flex items-center gap-4">
+          {/* WhatsApp Icon */}
+          <svg className="w-8 h-8 text-teal-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path d="M21 12.3A9 9 0 1 1 12.3 3a9 9 0 0 1 8.7 9.3z" />
+            <path d="M16.7 15.3c-.3.8-1.6 1.5-2.2 1.6-1.2.2-2.1-.1-3.2-.7-2.2-1.2-3.7-3.5-3.7-5.9 0-1.1.3-2.1 1-2.9.3-.3.7-.3 1 .1l1.2 1.7c.2.3.2.7-.1 1-.2.2-.4.5-.4.8 0 .2.1.4.2.6.3.5.7 1 1.2 1.3.2.1.4.1.6 0 .3-.1.6-.2.8-.4.3-.2.7-.2 1 .1l1.7 1.2c.4.3.4.7.1 1z"/>
+          </svg>
+          <span className="text-white font-semibold text-xl">Connect on WhatsApp for Instant Support</span>
+          <a
+            href="https://wa.me/971552002369"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-4 bg-teal-400 text-zinc-900 font-semibold px-6 py-2 rounded-full shadow hover:bg-teal-300 transition"
+          >
+            Start Chat
+          </a>
         </div>
-      </section>
+      </div>
 
       {/* Premium Footer */}
       <footer className="bg-gray-900 text-white py-12">
