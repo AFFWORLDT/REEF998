@@ -858,7 +858,7 @@ export default function ReefOffPlanPage() {
           </svg>
           <span className="text-white font-semibold text-xl">Connect on WhatsApp for Instant Support</span>
           <a
-            href="https://wa.me/971552002369"
+            href="https://wa.me/971552002369?text=Hi%2C%20I%20am%20interested%20in%20REEF%20998%20project.%20Please%20share%20more%20details%20about%20availability%2C%20pricing%2C%20and%20payment%20plan."
             target="_blank"
             rel="noopener noreferrer"
             className="ml-4 bg-teal-400 text-zinc-900 font-semibold px-6 py-2 rounded-full shadow hover:bg-teal-300 transition"
