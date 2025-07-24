@@ -52,6 +52,8 @@ export default function ReefOffPlanPage() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isConsultationSubmitting, setIsConsultationSubmitting] = useState(false)
+  const [isAmenitiesPopupOpen, setIsAmenitiesPopupOpen] = useState(false);
+  const [isLocationPopupOpen, setIsLocationPopupOpen] = useState(false);
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }))
@@ -300,7 +302,7 @@ export default function ReefOffPlanPage() {
               </div>
               <div className="flex-1 bg-zinc-800 border border-zinc-700 rounded-xl p-6 text-center">
                 <div className="text-3xl font-bold text-white mb-2">30%</div>
-                <div className="text-zinc-100">On handover<br/>(or 2.5-year post-handover plan)</div>
+                <div className="text-zinc-100">On handover<br/>(or post-handover plan)</div>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -563,8 +565,14 @@ export default function ReefOffPlanPage() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-            <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
-              <Image src="/images/location-map.jpg" alt="Location Map" fill className="object-cover" />
+            <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl aspect-video">
+              <button
+                className="absolute top-4 right-4 z-20 bg-reef-blue text-white font-bold px-4 py-2 rounded-lg shadow hover:bg-reef-blue/80 transition"
+                onClick={() => setIsLocationPopupOpen(true)}
+              >
+                CLICK TO VIEW
+              </button>
+              <Image src="/images/location-map.jpg" alt="Location Map" fill className="object-contain" />
             </div>
 
             <div className="space-y-8">
@@ -670,8 +678,14 @@ export default function ReefOffPlanPage() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-            <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
-              <Image src="/images/amenities-plan.jpg" alt="Amenities Plan" fill className="object-cover" />
+            <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl aspect-video">
+              <button
+                className="absolute top-4 right-4 z-20 bg-reef-blue text-white font-bold px-4 py-2 rounded-lg shadow hover:bg-reef-blue/80 transition"
+                onClick={() => setIsAmenitiesPopupOpen(true)}
+              >
+                CLICK TO VIEW
+              </button>
+              <Image src="/images/amenities-plan.jpg" alt="Amenities Plan" fill className="object-contain" />
             </div>
 
             <div className="grid grid-cols-2 gap-6">
@@ -717,103 +731,6 @@ export default function ReefOffPlanPage() {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Developer Profile */}
-      <section className="py-20 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <Badge className="bg-reef-blue/20 text-reef-blue/90 border-reef-blue/30 mb-4 px-4 py-2">Developer Profile</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">REEF Luxury Developments</h2>
-            <p className="text-xl opacity-80 max-w-3xl mx-auto">
-              Pioneering innovation in Dubai's real estate landscape with a proven track record of excellence
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="space-y-6 mb-8">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-reef-blue/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Award className="w-6 h-6 text-reef-blue" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-reef-blue mb-2">Proven Excellence</h3>
-                    <p className="opacity-80">
-                      REEF 999 and REEF 1000 both achieved complete sell-out status, demonstrating strong market
-                      confidence and exceptional delivery standards.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-reef-blue/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Users className="w-6 h-6 text-reef-blue" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-reef-blue mb-2">Visionary Leadership</h3>
-                    <p className="opacity-80">
-                      Led by CEO Samer Ambar with 20+ years in finance and real estate. Graduate of University of Dubai
-                      and London Business School.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-reef-blue/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <TrendingUp className="w-6 h-6 text-reef-blue" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-reef-blue mb-2">Innovation Focus</h3>
-                    <p className="opacity-80">
-                      Committed to integrating cutting-edge technology and sustainable design principles in every
-                      development project.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <Card className="bg-gray-800 border-gray-700 shadow-xl">
-                <CardContent className="pt-6">
-                  <div className="grid grid-cols-2 gap-4 text-center">
-                    <div>
-                      <div className="text-2xl font-bold text-cyan-400">20+</div>
-                      <div className="text-sm text-gray-300">Years Experience</div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-cyan-400">3</div>
-                      <div className="text-sm text-gray-300">Successful Projects</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gray-800 border-gray-700 shadow-xl">
-                <CardContent className="pt-6">
-                  <h4 className="font-bold text-lg mb-2 text-cyan-400">Project Timeline</h4>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-gray-300">Construction Start:</span>
-                      <span className="text-cyan-400">Q1 2024</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-300">Expected Handover:</span>
-                      <span className="text-cyan-400">Q2 2028</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-300">Project Type:</span>
-                      <span className="text-cyan-400">Residential Tower</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-
             </div>
           </div>
         </div>
@@ -925,7 +842,7 @@ export default function ReefOffPlanPage() {
       </section>
 
       {/* WhatsApp CTA */}
-      <div className="w-full bg-zinc-900 py-6 flex justify-center items-center">
+      <div className="w-full bg-gray-900 py-6 flex justify-center items-center">
         <div className="flex items-center gap-4">
           {/* WhatsApp Icon */}
           <svg className="w-8 h-8 text-teal-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -953,14 +870,6 @@ export default function ReefOffPlanPage() {
               <p className="text-sm opacity-80 mb-4">
                 Revolutionary luxury living with patented outdoor cooling technology in Dubai Land Residence Complex.
               </p>
-              <div className="flex space-x-4">
-                <div className="w-8 h-8 bg-cyan-600 rounded-full flex items-center justify-center">
-                  <Star className="w-4 h-4" />
-                </div>
-                <div className="w-8 h-8 bg-cyan-600 rounded-full flex items-center justify-center">
-                  <Building className="w-4 h-4" />
-                </div>
-              </div>
             </div>
 
             <div>
@@ -1015,6 +924,28 @@ export default function ReefOffPlanPage() {
           </svg>
         </a>
       </div>
+      {/* Amenities Popup Dialog */}
+      <Dialog open={isAmenitiesPopupOpen} onOpenChange={setIsAmenitiesPopupOpen}>
+        <DialogContent className="max-w-3xl">
+          <DialogHeader>
+            <DialogTitle>Amenities Plan</DialogTitle>
+          </DialogHeader>
+          <div className="w-full">
+            <Image src="/images/amenities-plan.jpg" alt="Amenities Plan Large" width={1200} height={800} className="w-full h-auto rounded-xl" />
+          </div>
+        </DialogContent>
+      </Dialog>
+      {/* Location Map Popup Dialog */}
+      <Dialog open={isLocationPopupOpen} onOpenChange={setIsLocationPopupOpen}>
+        <DialogContent className="max-w-3xl">
+          <DialogHeader>
+            <DialogTitle>Location Map</DialogTitle>
+          </DialogHeader>
+          <div className="w-full">
+            <Image src="/images/location-map.jpg" alt="Location Map Large" width={1200} height={800} className="w-full h-auto rounded-xl" />
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   )
 }
