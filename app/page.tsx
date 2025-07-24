@@ -619,7 +619,7 @@ export default function ReefOffPlanPage() {
                     <div>
                       <h3 className="text-xl font-bold text-reef-blue mb-2">Silicon Oasis Growth</h3>
                       <p className="text-gray-600">
-                        Dubailand is a sought-after area in Dubai with strong demand, driving substantial regional growth and development.
+                        Dubailand
                       </p>
                     </div>
                   </div>
