@@ -619,8 +619,7 @@ export default function ReefOffPlanPage() {
                     <div>
                       <h3 className="text-xl font-bold text-reef-blue mb-2">Silicon Oasis Growth</h3>
                       <p className="text-gray-600">
-                        Dubai Silicon Oasis is emerging as the city's third center by 2040, driving substantial regional
-                        growth and development.
+                        Dubailand is a sought-after area in Dubai with strong demand, driving substantial regional growth and development.
                       </p>
                     </div>
                   </div>
@@ -637,29 +636,37 @@ export default function ReefOffPlanPage() {
                 <div className="w-16 h-16 bg-reef-blue text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                   10
                 </div>
-                <div className="font-semibold">Global Village</div>
-                <div className="text-sm text-gray-600">Minutes</div>
+                <div className="font-semibold flex flex-col items-center">
+                  Global Village
+                  <span className="text-xs text-gray-600 font-semibold">Minutes</span>
+                </div>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-reef-blue text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                   20
                 </div>
-                <div className="font-semibold">Burj Khalifa</div>
-                <div className="text-sm text-gray-600">Minutes</div>
+                <div className="font-semibold flex flex-col items-center">
+                  Burj Khalifa
+                  <span className="text-xs text-gray-600 font-semibold">Minutes</span>
+                </div>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-reef-blue text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                   25
                 </div>
-                <div className="font-semibold">Dubai Airport</div>
-                <div className="text-sm text-gray-600">Minutes</div>
+                <div className="font-semibold flex flex-col items-center">
+                  Dubai Airport
+                  <span className="text-xs text-gray-600 font-semibold">Minutes</span>
+                </div>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-reef-blue text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                   30
                 </div>
-                <div className="font-semibold">Dubai Marina</div>
-                <div className="text-sm text-gray-600">Minutes</div>
+                <div className="font-semibold flex flex-col items-center">
+                  Dubai Marina
+                  <span className="text-xs text-gray-600 font-semibold">Minutes</span>
+                </div>
               </div>
             </div>
           </div>
