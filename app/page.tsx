@@ -541,7 +541,7 @@ export default function ReefOffPlanPage() {
                     <span className="font-bold text-white/90 text-lg sm:text-xl">50%</span>
                   </div>
                   <div className="flex justify-between items-center p-3 sm:p-4 bg-white/10 hover:bg-white/15 rounded-xl transition-colors">
-                    <span className="text-sm sm:text-base">On Handover</span>
+                    <span className="text-sm sm:text-base">On Handover or Post Handover</span>
                     <span className="font-bold text-white/90 text-lg sm:text-xl">30%</span>
                   </div>
 
