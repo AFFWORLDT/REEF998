@@ -617,9 +617,9 @@ export default function ReefOffPlanPage() {
                       <TrendingUp className="w-6 h-6 text-reef-blue" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-reef-blue mb-2">Silicon Oasis Growth</h3>
+                      <h3 className="text-xl font-bold text-reef-blue mb-2">Dubailand Growth</h3>
                       <p className="text-gray-600">
-                        Dubailand
+                        Dubailand is a sought-after area in Dubai with strong demand, driving substantial regional growth and development.
                       </p>
                     </div>
                   </div>
