@@ -272,11 +272,6 @@ export default function ReefOffPlanPage() {
 
         {/* Premium Overlay Content */}
         <div className="relative z-10 px-5 sm:px-6 max-w-6xl text-white w-full md:w-1/2 lg:w-[45%] pl-4 sm:pl-10 md:pl-16 lg:pl-24 py-16 sm:py-0">
-          <div className="mb-5 sm:mb-7 text-left">
-            <Badge className="bg-reef-blue/90 hover:bg-reef-blue text-white border-reef-blue/80 mb-3 px-3.5 py-1.5 text-xs sm:text-sm font-medium transition-colors">
-              Off-Plan Development • Q2 2028 Handover
-            </Badge>
-          </div>
 
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 sm:mb-8 tracking-tight text-white leading-tight">
             REEF <span className="text-reef-blue drop-shadow-lg">998</span>
