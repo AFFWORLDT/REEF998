@@ -324,21 +324,16 @@ export default function ReefOffPlanPage() {
 
           {/* Premium Pricing Display */}
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 sm:p-6 mb-6 sm:mb-8 border border-white/20 shadow-lg">
-            <div className="grid grid-cols-2 gap-4 sm:gap-6 text-center">
-              <div className="pb-0 border-b-0 border-white/20">
-                <div className="text-2xl sm:text-3xl font-bold text-reef-blue">AED 695,850</div>
-                <div className="text-xs sm:text-sm opacity-80 mt-1">Starting Price</div>
-              </div>
+            <div className="text-center">
               <div className="pb-0">
-                <div className="text-2xl sm:text-3xl font-bold text-reef-blue">USD 189,500</div>
-                <div className="text-xs sm:text-sm opacity-80 mt-1">International Price</div>
+                <div className="text-2xl sm:text-3xl font-bold text-teal-300">AED 695,850</div>
+                <div className="text-xs sm:text-sm text-white opacity-80 mt-1">Starting Price</div>
               </div>
             </div>
             <div className="mt-4 pt-4 border-t border-white/10 text-center">
-              <p className="text-xs text-gray-300">Prices starting from. Contact us for detailed pricing and availability.</p>
+              <p className="text-xs text-white opacity-70">Prices starting from. Contact us for detailed pricing and availability.</p>
             </div>
           </div>
-
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Dialog open={isLeadPopupOpen} onOpenChange={setIsLeadPopupOpen}>
