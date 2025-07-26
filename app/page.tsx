@@ -278,7 +278,7 @@ export default function ReefOffPlanPage() {
           </h1>
 
           {/* Payment Plan Section */}
-          <div className="bg-zinc-900 rounded-2xl p-8 max-w-3xl mx-auto text-white">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-3xl mx-auto text-white border border-white/20 shadow-lg">
             <div className="mb-6">
               <p className="text-teal-300 font-semibold tracking-widest mb-2">BENEFIT FROM 0% INTEREST</p>
               <h2 className="text-4xl font-extrabold mb-4">3-Year Payment Plan</h2>
@@ -287,15 +287,15 @@ export default function ReefOffPlanPage() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <div className="flex-1 bg-gradient-to-b from-teal-900/60 to-zinc-800 border border-teal-400 rounded-xl p-6 text-center">
+              <div className="flex-1 bg-white/10 backdrop-blur-sm border border-teal-400/50 rounded-xl p-6 text-center">
                 <div className="text-3xl font-bold text-teal-300 mb-2">20%</div>
                 <div className="text-zinc-100">Secure your unit with an initial down payment</div>
               </div>
-              <div className="flex-1 bg-zinc-800 border border-zinc-700 rounded-xl p-6 text-center">
+              <div className="flex-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
                 <div className="text-3xl font-bold text-white mb-2">50%</div>
                 <div className="text-zinc-100">During construction<br/>(flexible installments)</div>
               </div>
-              <div className="flex-1 bg-zinc-800 border border-zinc-700 rounded-xl p-6 text-center">
+              <div className="flex-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
                 <div className="text-3xl font-bold text-white mb-2">30%</div>
                 <div className="text-zinc-100">On handover<br/>(or post-handover plan)</div>
               </div>
@@ -313,11 +313,11 @@ export default function ReefOffPlanPage() {
               <button
                 className="flex-1 border border-white text-white font-semibold py-3 rounded-lg hover:bg-white hover:text-zinc-900 transition"
                 onClick={() => {
-                  setFormType("investment");
+                  setFormType("eoi");
                   setIsLeadPopupOpen(true);
                 }}
               >
-                Calculate ROI
+                Register Interest
               </button>
             </div>
           </div>
@@ -348,14 +348,14 @@ export default function ReefOffPlanPage() {
                     {formType === "brochure" && "Download Brochure"}
                     {formType === "schedule" && "Schedule Viewing"}
                     {formType === "investment" && "Investment Analysis"}
-                    {formType === "eoi" && "Expression of Interest"}
+                    {formType === "eoi" && "Register Interest"}
                     {formType === "consultation" && "Schedule Consultation"}
                   </DialogTitle>
                   <p className="text-center text-gray-600 mt-2">
                     {formType === "brochure" && "Get comprehensive project details and floor plans"}
                     {formType === "schedule" && "Book your private viewing appointment"}
                     {formType === "investment" && "Get detailed ROI analysis and projections"}
-                    {formType === "eoi" && "Secure priority access with AED 35,000 EOI"}
+                    {formType === "eoi" && "Register your interest to get priority access and exclusive updates"}
                     {formType === "consultation" && "Connect with our investment specialists"}
                   </p>
                 </DialogHeader>
@@ -452,11 +452,11 @@ export default function ReefOffPlanPage() {
                     >
                       {isSubmitting ? "Submitting..." : (
                         <>
-                          {formType === "brochure" && "Download Now"}
-                          {formType === "schedule" && "Book Viewing"}
-                          {formType === "investment" && "Get Analysis"}
-                          {formType === "eoi" && "Submit EOI"}
-                          {formType === "consultation" && "Schedule Now"}
+                                                {formType === "brochure" && "Download Now"}
+                      {formType === "schedule" && "Book Viewing"}
+                      {formType === "investment" && "Get Analysis"}
+                      {formType === "eoi" && "Register Interest"}
+                      {formType === "consultation" && "Schedule Now"}
                         </>
                       )}
                     </Button>
