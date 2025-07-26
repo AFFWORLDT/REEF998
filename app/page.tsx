@@ -889,6 +889,19 @@ export default function ReefOffPlanPage() {
               </ul>
             </div>
 
+            <div className="md:col-span-2 flex justify-center">
+              <div className="text-center">
+                <h3 className="font-bold mb-4">Scan QR Code</h3>
+                <Image 
+                  src="/images/qr.png" 
+                  alt="QR Code for REEF 998" 
+                  width={120} 
+                  height={120}
+                  className="w-24 h-24"
+                />
+                <p className="text-sm opacity-80 mt-2">Scan to get more information</p>
+              </div>
+            </div>
 
           </div>
 
