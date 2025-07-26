@@ -278,26 +278,26 @@ export default function ReefOffPlanPage() {
           </h1>
 
           {/* Payment Plan Section */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-3xl mx-auto text-white border border-white/20 shadow-lg">
+          <div className="rounded-2xl p-8 max-w-3xl mx-auto text-white">
             <div className="mb-6">
-              <p className="text-teal-300 font-semibold tracking-widest mb-2">BENEFIT FROM 0% INTEREST</p>
+              <p className="text-teal-400 font-semibold tracking-widest mb-2">BENEFIT FROM 0% INTEREST</p>
               <h2 className="text-4xl font-extrabold mb-4">3-Year Payment Plan</h2>
-              <p className="text-lg text-zinc-200">
+              <p className="text-lg text-white font-medium">
                 REEF 998 presents an exceptional investment opportunity with strong rental return potential. Investors benefit from capital appreciation — even during construction — once 30% is paid.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <div className="flex-1 bg-white/10 backdrop-blur-sm border border-teal-400/50 rounded-xl p-6 text-center">
-                <div className="text-3xl font-bold text-teal-300 mb-2">20%</div>
-                <div className="text-zinc-100">Secure your unit with an initial down payment</div>
+              <div className="flex-1 border border-teal-400/70 rounded-xl p-6 text-center">
+                <div className="text-3xl font-bold text-teal-400 mb-2">20%</div>
+                <div className="text-white font-medium">Secure your unit with an initial down payment</div>
               </div>
-              <div className="flex-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
+              <div className="flex-1 border border-white/30 rounded-xl p-6 text-center">
                 <div className="text-3xl font-bold text-white mb-2">50%</div>
-                <div className="text-zinc-100">During construction<br/>(flexible installments)</div>
+                <div className="text-white font-medium">During construction<br/>(flexible installments)</div>
               </div>
-              <div className="flex-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
+              <div className="flex-1 border border-white/30 rounded-xl p-6 text-center">
                 <div className="text-3xl font-bold text-white mb-2">30%</div>
-                <div className="text-zinc-100">On handover<br/>(or post-handover plan)</div>
+                <div className="text-white font-medium">On handover<br/>(or post-handover plan)</div>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -323,15 +323,13 @@ export default function ReefOffPlanPage() {
           </div>
 
           {/* Premium Pricing Display */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 sm:p-6 mb-6 sm:mb-8 border border-white/20 shadow-lg">
-            <div className="text-center">
-              <div className="pb-0">
-                <div className="text-2xl sm:text-3xl font-bold text-teal-300">AED 695,850</div>
-                <div className="text-xs sm:text-sm text-white opacity-80 mt-1">Starting Price</div>
-              </div>
+          <div className="rounded-xl p-5 sm:p-6 mb-6 sm:mb-8 text-center">
+            <div className="pb-0">
+              <div className="text-2xl sm:text-3xl font-bold text-teal-400">AED 695,850</div>
+              <div className="text-xs sm:text-sm text-white font-medium mt-1">Starting Price</div>
             </div>
-            <div className="mt-4 pt-4 border-t border-white/10 text-center">
-              <p className="text-xs text-white opacity-70">Prices starting from. Contact us for detailed pricing and availability.</p>
+            <div className="mt-4 pt-4 border-t border-white/20 text-center">
+              <p className="text-xs text-white font-medium">Prices starting from. Contact us for detailed pricing and availability.</p>
             </div>
           </div>
 
