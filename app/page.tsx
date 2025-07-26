@@ -271,15 +271,15 @@ export default function ReefOffPlanPage() {
         </div>
 
         {/* Premium Overlay Content */}
-        <div className="relative z-10 px-5 sm:px-6 max-w-6xl text-white w-full md:w-1/2 lg:w-[45%] pl-4 sm:pl-10 md:pl-16 lg:pl-24 py-16 sm:py-0">
+        <div className="relative z-10 px-5 sm:px-6 max-w-6xl text-white w-full md:w-1/2 lg:w-[45%] pl-4 sm:pl-10 md:pl-16 lg:pl-24 py-16 sm:py-0 flex flex-col items-center">
 
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 sm:mb-8 tracking-tight text-white leading-tight">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 sm:mb-8 tracking-tight text-white leading-tight text-center">
             REEF <span className="text-reef-blue drop-shadow-lg">998</span>
           </h1>
 
           {/* Payment Plan Section */}
-          <div className="rounded-2xl p-8 max-w-3xl mx-auto text-white">
-            <div className="mb-6">
+          <div className="rounded-2xl p-8 max-w-3xl w-full text-white">
+            <div className="mb-6 text-center">
               <p className="text-teal-400 font-semibold tracking-widest mb-2">BENEFIT FROM 0% INTEREST</p>
               <h2 className="text-4xl font-extrabold mb-4">3-Year Payment Plan</h2>
               <p className="text-lg text-white font-medium">
@@ -323,7 +323,7 @@ export default function ReefOffPlanPage() {
           </div>
 
           {/* Premium Pricing Display */}
-          <div className="rounded-xl p-5 sm:p-6 mb-6 sm:mb-8 text-center">
+          <div className="rounded-xl p-5 sm:p-6 mb-6 sm:mb-8 text-center w-full max-w-3xl">
             <div className="pb-0">
               <div className="text-2xl sm:text-3xl font-bold text-teal-400">AED 695,850</div>
               <div className="text-xs sm:text-sm text-white font-medium mt-1">Starting Price</div>
@@ -333,7 +333,7 @@ export default function ReefOffPlanPage() {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-3xl">
             <Dialog open={isLeadPopupOpen} onOpenChange={setIsLeadPopupOpen}>
               <DialogContent className="sm:max-w-md">
                 <DialogHeader>
@@ -879,7 +879,6 @@ export default function ReefOffPlanPage() {
 
             <div className="md:col-span-2 flex justify-center">
               <div className="text-center">
-                <h3 className="font-bold mb-4">Scan QR Code</h3>
                 <Image 
                   src="/images/qr.png" 
                   alt="QR Code for REEF 998" 
