@@ -24,6 +24,64 @@ import {
 } from "lucide-react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { useState } from "react"
+import { PhotoGallery } from "@/components/ui/photo-gallery"
+
+const galleryImages = [
+  {
+    src: "/images/aerial-view.jpg",
+    alt: "Aerial View",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/amenities-plan.jpg",
+    alt: "Amenities Plan",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/floor-layout.jpg",
+    alt: "Floor Layout",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/location-map.jpg",
+    alt: "Location Map",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/payment-plan.jpg",
+    alt: "Payment Plan",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/podium-amenities.jpg",
+    alt: "Podium Amenities",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/reef-998-building.jpg",
+    alt: "Reef 998 Building",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/rooftop-amenities.jpg",
+    alt: "Rooftop Amenities",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/rooftop-plan.jpg",
+    alt: "Rooftop Plan",
+    width: 1920,
+    height: 1080
+  }
+]
 
 export default function ReefOffPlanPage() {
   const currentDate = new Date().toLocaleDateString("en-US", {
@@ -833,6 +891,20 @@ export default function ReefOffPlanPage() {
           </Card>
 
 
+        </div>
+      </section>
+
+      {/* Photo Gallery Section - Add this before the Contact & Inquiry section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <Badge className="bg-reef-blue/10 text-reef-blue/90 mb-4 px-4 py-2 border border-reef-blue/20">Photo Gallery</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Project Gallery</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Explore our stunning project through these carefully curated images
+            </p>
+          </div>
+          <PhotoGallery images={galleryImages} />
         </div>
       </section>
 
