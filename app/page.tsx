@@ -28,68 +28,14 @@ import { PhotoGallery } from "@/components/ui/photo-gallery"
 
 const galleryImages = [
   {
-    src: "/images/aerial-view.jpg",
-    alt: "Aerial View",
-    width: 1920,
-    height: 1080
-  },
-  {
-    src: "/images/amenities-plan.jpg",
-    alt: "Amenities Plan",
-    width: 1920,
-    height: 1080
-  },
-  {
     src: "/images/df.jpg",
     alt: "Development Features",
     width: 1920,
     height: 1080
   },
   {
-    src: "/images/floor-layout.jpg",
-    alt: "Floor Layout",
-    width: 1920,
-    height: 1080
-  },
-  {
-    src: "/images/location-map.jpg",
-    alt: "Location Map",
-    width: 1920,
-    height: 1080
-  },
-  {
-    src: "/images/payment-plan.jpg",
-    alt: "Payment Plan",
-    width: 1920,
-    height: 1080
-  },
-  {
-    src: "/images/podium-amenities.jpg",
-    alt: "Podium Amenities",
-    width: 1920,
-    height: 1080
-  },
-  {
     src: "/images/reef-998-building.jpg",
     alt: "Reef 998 Building",
-    width: 1920,
-    height: 1080
-  },
-  {
-    src: "/images/reef-logo.jpg",
-    alt: "Reef Logo",
-    width: 1920,
-    height: 1080
-  },
-  {
-    src: "/images/rooftop-amenities.jpg",
-    alt: "Rooftop Amenities",
-    width: 1920,
-    height: 1080
-  },
-  {
-    src: "/images/rooftop-plan.jpg",
-    alt: "Rooftop Plan",
     width: 1920,
     height: 1080
   },
@@ -162,6 +108,84 @@ const galleryImages = [
   {
     src: "/images/Screenshot 2025-07-30 at 18.39.15.png",
     alt: "Project Screenshot 12",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.47.03.png",
+    alt: "Project Screenshot 13",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.47.10.png",
+    alt: "Project Screenshot 14",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.47.18.png",
+    alt: "Project Screenshot 15",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.47.24.png",
+    alt: "Project Screenshot 16",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.47.32.png",
+    alt: "Project Screenshot 17",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.47.39.png",
+    alt: "Project Screenshot 18",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.47.47.png",
+    alt: "Project Screenshot 19",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.47.53.png",
+    alt: "Project Screenshot 20",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.47.59.png",
+    alt: "Project Screenshot 21",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.48.08.png",
+    alt: "Project Screenshot 22",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.48.14.png",
+    alt: "Project Screenshot 23",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.48.19.png",
+    alt: "Project Screenshot 24",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.48.24.png",
+    alt: "Project Screenshot 25",
     width: 1920,
     height: 1080
   }
