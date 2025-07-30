@@ -40,6 +40,12 @@ const galleryImages = [
     height: 1080
   },
   {
+    src: "/images/df.jpg",
+    alt: "Development Features",
+    width: 1920,
+    height: 1080
+  },
+  {
     src: "/images/floor-layout.jpg",
     alt: "Floor Layout",
     width: 1920,
@@ -70,6 +76,12 @@ const galleryImages = [
     height: 1080
   },
   {
+    src: "/images/reef-logo.jpg",
+    alt: "Reef Logo",
+    width: 1920,
+    height: 1080
+  },
+  {
     src: "/images/rooftop-amenities.jpg",
     alt: "Rooftop Amenities",
     width: 1920,
@@ -78,6 +90,78 @@ const galleryImages = [
   {
     src: "/images/rooftop-plan.jpg",
     alt: "Rooftop Plan",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.37.43.png",
+    alt: "Project Screenshot 1",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.37.56.png",
+    alt: "Project Screenshot 2",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.38.04.png",
+    alt: "Project Screenshot 3",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.38.12.png",
+    alt: "Project Screenshot 4",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.38.20.png",
+    alt: "Project Screenshot 5",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.38.25.png",
+    alt: "Project Screenshot 6",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.38.32.png",
+    alt: "Project Screenshot 7",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.38.37.png",
+    alt: "Project Screenshot 8",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.38.43.png",
+    alt: "Project Screenshot 9",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.38.51.png",
+    alt: "Project Screenshot 10",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.39.06.png",
+    alt: "Project Screenshot 11",
+    width: 1920,
+    height: 1080
+  },
+  {
+    src: "/images/Screenshot 2025-07-30 at 18.39.15.png",
+    alt: "Project Screenshot 12",
     width: 1920,
     height: 1080
   }
